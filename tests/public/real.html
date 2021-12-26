@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script src="wusocket.js"></script>
+</head>
+<script>
+
+function Start() {
+let NUM_PACKETS = 1000;
+  let SEND_INTERVAL = 200;
+  let packetNumber = 0;
+	var num=0;
+  let socket = new WuSocket(window.location.protocol + "//" + window.location.hostname + ":" +window.location.port);
+  socket.onopen = function() {
+    setInterval(function() {
+      let payload =Date.now()+'';
+      socket.send(payload);
+      packetNumber++
+    }, SEND_INTERVAL);
+  };
+
+  socket.onmessage = function(evt) {
+	console.log(num);
+    var data = evt.data;
+		if (num%50==0){		
+		var t=Date.now()-parseInt(evt.data);
+		var msg='No: '+num+', time: '+t+'\n';
+		alert(msg);
+    document.body.textContent+=msg;
+		num++;
+		}
+  };
+}
+
+(function() {
+  if (document.readyState != "loading") {
+    Start();
+  } else {
+    document.addEventListener("DOMContentLoaded", Start);
+  }
+})();
+</script>
+<body>
+</body>
+</html>
