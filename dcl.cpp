@@ -430,4 +430,4 @@ NAN_METHOD(WuHostWrap::SendBinaryData) {
 }
 
 NAN_MODULE_INIT(Init) { WuHostWrap::Init(target); }
-NODE_MODULE(WebUDP, Init);
+NODE_MODULE(dcl, Init);
