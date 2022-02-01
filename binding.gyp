@@ -4,7 +4,7 @@
 			"target_name":"base",
 			"product_prefix": "lib",
       			"type": "static_library",
-			'cflags_cc':[
+			'cxxflags':[
       			'-std=gnu++11'
     			],
 			"include_dirs":[
@@ -19,7 +19,7 @@
       'dependencies': [
         'base'
       ],
-	'cflags_cc':[
+	'cxxflags':[
       	'-std=gnu++11'
     ],
       "include_dirs": [
