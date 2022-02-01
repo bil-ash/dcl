@@ -4,8 +4,8 @@
 			"target_name":"base",
 			"product_prefix": "lib",
       			"type": "static_library",
-			'cxxflags':[
-      			'-std=gnu++11'
+			'!cflags_cc':[
+      			'-std=gnu++14'
     			],
 			"include_dirs":[
 			'<(node_root_dir)/deps/openssl/openssl/include',
@@ -19,8 +19,8 @@
       'dependencies': [
         'base'
       ],
-	'cxxflags':[
-      	'-std=gnu++11'
+	'!cflags_cc':[
+      	'-std=gnu++14'
     ],
       "include_dirs": [
         "<!(node -e \"require('nan')\")",
