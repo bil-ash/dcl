@@ -3,7 +3,10 @@
 		{
 			"target_name":"base",
 			"product_prefix": "lib",
-      "type": "static_library",
+      			"type": "static_library",
+			'cflags':[
+      			'-std=gnu++11'
+    			],
 			"include_dirs":[
 			'<(node_root_dir)/deps/openssl/openssl/include',
 			'libsrc'
@@ -16,6 +19,9 @@
       'dependencies': [
         'base'
       ],
+	'cflags':[
+      	'-std=gnu++11'
+    ],
       "include_dirs": [
         "<!(node -e \"require('nan')\")",
 				"libsrc"
