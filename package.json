@@ -11,6 +11,6 @@
   "license": "ISC",
   "gypfile": true,
   "dependencies": {
-    "nan": "^2.15.0"
+    "nan": "latest"
   }
 }
